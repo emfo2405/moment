@@ -1,3 +1,27 @@
+$highlight-color: #8b7541;
+$text-color: #0c0e09;
+$background-color: #fff5df;
+$main-color: #ebc673;
 
+body {
+  background-color: $main-color;
+  color: $text-color;
+}
+
+main {
+  background-color: $background-color;
+  width: 90%;
+  margin: auto;
+  box-shadow: 1px 1px 5px $highlight-color;
+}
+
+#title {
+  color: $text-color;
+  padding: 2%;
+  text-align: center;
+  border-bottom: 5px solid $main-color;
+  font-family: "Limelight", sans-serif;
+
+}
 
 
