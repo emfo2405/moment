@@ -10,13 +10,29 @@ function printCourseInfo (course: courseInfo) : void {
 
   if (courseList) {
       courseList.innerHTML += `
-      <li>
+      <li class="courseElement">
       ${course.code}, 
       ${course.name}, 
       ${course.progression}, 
       <a href="${course.syllabus}">Kursplan</a></li>
       `;
   }
+
+  saveCourseList();
+}
+
+function saveCourseList() {
+  let courseEl = document.getElementsByClassName("courseElement") as HTMLCollectionOf<HTMLLIElement>;
+  let courseArr: Array<string> = [];
+
+  for (let i = 0; i < courseEl.length; i = i + 1) {
+    courseArr.push(courseEl[i].innerHTML);
+  }
+
+  let jsonStr: string = JSON.stringify(courseArr);
+  localStorage.setItem("courseEl", jsonStr);
+
+  console.log(courseArr);
 }
 
 let courseForm = document.getElementById("courseForm") as HTMLFormElement;
@@ -36,7 +52,7 @@ courseForm.addEventListener("submit", (event) => {
         syllabus: courseSyllabus.value
 
     };
-    
+
     printCourseInfo(newCourse);
 
     courseForm.reset();
