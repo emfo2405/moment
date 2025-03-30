@@ -24,4 +24,37 @@ main {
 
 }
 
+#list {
+  padding: 2%;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+#add-course {
+  h3 {
+    text-align: center;
+  }
+}
+
+input {
+  width: 80%;
+  padding: 2%;
+  margin: 10%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background-color: lighten($background-color,3%);
+  border-bottom: 5px solid $main-color;
+}
+
+select {
+  @extend input;
+  width: 84%;
+}
+
+
 
