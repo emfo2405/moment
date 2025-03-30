@@ -56,5 +56,47 @@ select {
   width: 84%;
 }
 
+li {
+  margin-top: 2%;
+}
+
+label {
+  margin-left: 10%;
+}
+
+button {
+  background-color: darken($background-color, 20%);
+  border: 1px solid #c5c5c5;
+  border-bottom: 5px solid $main-color;
+  padding: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  border-radius: 5px;
+  margin-left: 42%;
+  color: darken($background-color, 80%);
+  margin-top: 2%;
+}
+
+button:hover {
+  background-color: darken($background-color, 10%);
+  cursor: pointer;
+}
+
+footer {
+  border-top: 5px solid $main-color;
+  text-align: center;
+  padding: 1%;
+  margin-top: 10%;
+}
+
+a {
+  color: darken($main-color,35%);
+  text-decoration: none;
+}
+
+a:hover {
+  color: darken($main-color,3%);
+}
+
 
 
