@@ -29,9 +29,16 @@ main {
 
 #list {
   padding: 2%;
+ 
+  
 
   h2 {
     text-align: center;
+  }
+
+  li {
+     margin-left: 10%;
+    list-style-type: circle;
   }
 }
 

@@ -1,8 +1,94 @@
   //Anpassningar till skärmstorlekar
   @media (min-width: 1300px) {
-    footer {
-        background-color: aqua;
+
+
+    #list {
+        li{
+           margin-left: 20%; 
+           font-size: 110%;
+        }
+
     }
 
+    input {
+        width: 60%;
+        margin-left: 20%;
+        padding: 1.5%;
+    }
+
+    label {
+        margin-left: 20%;
+    }
+
+    button {
+        margin-left: 45%;
+        padding: 1.5%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
     
   }
+
+  @media (min-width: 1700px) {
+
+
+    #list {
+        li{
+           margin-left: 30%; 
+           font-size: 110%;
+        }
+    }
+
+    input {
+        width: 45%;
+        margin-left: 27.5%;
+        padding: 1.5%;
+    }
+
+    label {
+        margin-left: 27.5%;
+    }
+
+    button {
+        margin-left: 47%;
+        padding: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+
+  }
+
+  @media (min-width: 2000px) {
+
+
+#list {
+    width: 80%;
+    margin-left: 10%;
+
+    li{
+        margin-left: 30%; 
+        font-size: 110%;
+        line-height: 80%;;
+     }
+}
+
+input {
+    width: 30%;
+    margin-left: 35%;
+    padding: 1%;
+}
+
+label {
+    margin-left: 35%;
+}
+
+button {
+    margin-left: 48%;
+    padding: 0.8%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+    
+}
