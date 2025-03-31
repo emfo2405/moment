@@ -1,3 +1,6 @@
+
+//window.onload = loadCourses;
+
 interface courseInfo {
   code: string;
   name: string;
@@ -6,33 +9,33 @@ interface courseInfo {
 }
 
 function printCourseInfo (course: courseInfo) : void {
-  let courseList = document.getElementById("course-list");
+  let courseList = document.getElementById("course-list") as HTMLElement;
 
-  if (courseList) {
-      courseList.innerHTML += `
-      <li class="courseElement">
+ if (courseList) {
+  //Hämta in alla element
+  let existingCode = document.getElementsByClassName("courseElement") as HTMLCollectionOf<HTMLLIElement>;
+  //Kolla om kurskoden redan existerar
+  let codeExists = Array.from(existingCode).some(courseEl => {
+    let codeCheck = courseEl.innerHTML.split(",")[0].trim();
+    return codeCheck === course.code;
+  });
+ 
+  if (!codeExists){
+        let li = document.createElement("li");
+    li.className = "courseElement";
+    li.innerHTML =  `
       ${course.code}, 
       ${course.name}, 
       ${course.progression}, 
       <a href="${course.syllabus}">Kursplan</a></li>
       `;
+
+      courseList.appendChild(li);
+  } else {
+    alert("Kurskoden existerar redan, lägg till en ny kurs")
   }
-
-  saveCourseList();
-}
-
-function saveCourseList() {
-  let courseEl = document.getElementsByClassName("courseElement") as HTMLCollectionOf<HTMLLIElement>;
-  let courseArr: Array<string> = [];
-
-  for (let i = 0; i < courseEl.length; i = i + 1) {
-    courseArr.push(courseEl[i].innerHTML);
   }
-
-  let jsonStr: string = JSON.stringify(courseArr);
-  localStorage.setItem("courseEl", jsonStr);
-
-  console.log(courseArr);
+  //saveCourseList();
 }
 
 let courseForm = document.getElementById("courseForm") as HTMLFormElement;
@@ -54,9 +57,16 @@ courseForm.addEventListener("submit", (event) => {
     };
 
     printCourseInfo(newCourse);
-
     courseForm.reset();
+
 });
+
+
+
+
+
+
+
 
 
 
